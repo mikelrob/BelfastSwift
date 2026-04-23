@@ -784,6 +784,16 @@ h1, h2, h3 {
         padding: 100px 24px 64px;
     }
 
+    .hero__title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .hero__logo {
+        height: clamp(100px, 40vw, 160px);
+    }
+
     .about__stats {
         gap: 40px;
     }
