@@ -328,12 +328,26 @@ h1, h2, h3 {
     transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
+.hero__title-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: 28px;
+}
+
+.hero__logo {
+    height: clamp(140px, 22vw, 260px);
+    width: auto;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+}
+
 .hero__title {
     font-size: clamp(4.5rem, 12vw, 9rem);
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 0.92;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     color: var(--text-primary);
 }
 
