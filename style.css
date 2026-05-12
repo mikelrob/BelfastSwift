@@ -244,29 +244,25 @@ h1, h2, h3 {
 }
 
 .nav__cta {
-    display: none;
-    padding: 8px 20px;
+    display: inline-flex;
+    padding: 8px 16px;
     background: var(--btn-primary-bg);
     color: var(--btn-primary-fg);
     border-radius: 100px;
     font-size: 0.875rem;
     font-weight: 600;
     transition: opacity 0.2s ease, background 0.4s ease, color 0.4s ease;
+    cursor: pointer;
 }
 
 .nav__cta:hover {
     opacity: 0.88;
 }
 
-
-
-/* =============================================
-   HERO
-   ============================================= */
-
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     padding: 120px 24px 80px;
@@ -343,7 +339,7 @@ h1, h2, h3 {
 }
 
 .hero__title {
-    font-size: clamp(4.5rem, 12vw, 9rem);
+    font-size: clamp(2.5rem, 12vw, 9rem);
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 0.92;
@@ -612,7 +608,7 @@ h1, h2, h3 {
     text-decoration-color: var(--accent);
 }
 
-
+.venue__address {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -762,12 +758,6 @@ h1, h2, h3 {
    RESPONSIVE
    ============================================= */
 
-@media (min-width: 768px) {
-    .nav__cta {
-        display: inline-flex;
-    }
-}
-
 @media (max-width: 900px) {
     .venue__content {
         grid-template-columns: 1fr;
@@ -775,12 +765,15 @@ h1, h2, h3 {
 }
 
 @media (max-width: 768px) {
+    .nav__cta {
+        padding: 8px 16px;
+    }
+
     .section {
         padding: 64px 0;
     }
 
     .hero {
-        min-height: auto;
         padding: 100px 24px 64px;
     }
 
@@ -796,6 +789,10 @@ h1, h2, h3 {
 
     .about__stats {
         gap: 40px;
+    }
+
+    .stat__number {
+        font-size: 2rem;
     }
 
     .theme-toggle .theme-toggle__text {
