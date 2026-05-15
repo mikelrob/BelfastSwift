@@ -13,7 +13,7 @@
 
     --text-primary:     #FFFFFF;
     --text-secondary:   rgba(235, 235, 245, 0.6);
-    --text-tertiary:    rgba(235, 235, 245, 0.3);
+    --text-tertiary:    rgba(235, 235, 245, 0.50);
 
     --accent:           #FF6B2B;
     --accent-alt:       #FF2D55;
@@ -53,7 +53,7 @@
 
     --text-primary:     #FFFFFF;
     --text-secondary:   rgba(255, 255, 255, 0.62);
-    --text-tertiary:    rgba(255, 255, 255, 0.28);
+    --text-tertiary:    rgba(255, 255, 255, 0.50);
 
     --accent:           #D4AF37;
     --accent-alt:       #007A33;
@@ -83,6 +83,43 @@
     --radius:    16px;
     --radius-sm:  8px;
     --radius-xs:  6px;
+}
+
+/* =============================================
+   SKIP LINK
+   ============================================= */
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 999;
+    padding: 8px 16px;
+    background: var(--accent);
+    color: var(--btn-primary-fg);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+    outline: 2px solid var(--btn-primary-fg);
+    outline-offset: 2px;
+}
+
+/* =============================================
+   FOCUS STYLES
+   ============================================= */
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 /* =============================================
@@ -220,13 +257,15 @@ h1, h2, h3 {
     justify-content: space-between;
 }
 
-.nav__logo {
+.nav__logo,
+a.nav__logo {
     font-size: 1.25rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 8px;
     color: var(--text-primary);
+    text-decoration: none;
 }
 
 .nav__logo-icon {
@@ -731,12 +770,15 @@ h1, h2, h3 {
     gap: 20px;
 }
 
-.footer__logo {
+.footer__logo,
+a.footer__logo {
     font-size: 1.125rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .footer__social {
@@ -852,5 +894,23 @@ h1, h2, h3 {
         text-align: left;
         color: var(--accent);
         transition: color 0.4s ease;
+    }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
     }
 }
